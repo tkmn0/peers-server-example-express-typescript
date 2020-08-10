@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es2017",
+    "sourceMap": false,
+    "outDir": "dist",
+    "types": [
+      "node",
+      "jest"
+    ],
+    "baseUrl": "./src/",
+    "paths": {
+      "#/*": [
+        "*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "**/**.test.ts",
+    "__test__/**/*",
+    "node_modules/@types/**/*",
+  ]
+}
