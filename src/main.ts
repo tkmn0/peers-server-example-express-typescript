@@ -20,3 +20,4 @@ const server = app
 const peers = new Peers(server);
 peers.setLogLevel('info');
 peers.start();
+console.log(process.env.NODE_ENV);
