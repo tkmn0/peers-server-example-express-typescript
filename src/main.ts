@@ -4,7 +4,7 @@ import Peers from 'peers-server';
 import * as Path from 'path';
 
 const WEB_DIR = Path.resolve(__dirname, '..', 'web');
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 const app = Express();
 
 app.use(Cors());
