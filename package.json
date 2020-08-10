@@ -37,7 +37,8 @@
     "dev": "cross-env NODE_ENV=development nodemon -L",
     "test": "jest -c ./jest.config.js",
     "clean": "rimraf dist",
-    "start": "node ./dist/main.js"
+    "start": "node ./dist/main.js",
+    "start:dev": "cross-env NODE_ENV=development npm run start"
   },
   "keywords": [],
   "author": "nzer0",
