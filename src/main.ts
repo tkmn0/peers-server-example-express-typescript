@@ -10,12 +10,11 @@ const app = Express();
 app.use(Cors());
 app.use(Express.static(WEB_DIR));
 
-app.get(/.*/, function (req: Express.Request, res: Express.Response) {
-  res.sendFile(Path.resolve(WEB_DIR, 'index.html'));
-});
-
 // setup peers
-const server = app.listen(port, () => console.log('server started at', port));
+const server = app
+  .use((_, res) => res.sendFile(Path.resolve(WEB_DIR, 'index.html')))
+  .listen(port, () => console.log('server started at', port));
+
 const peers = new Peers(server);
 peers.setLogLevel('info');
 peers.start();
