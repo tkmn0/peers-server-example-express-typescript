@@ -12,7 +12,9 @@ app.use(Express.static(WEB_DIR));
 
 // setup peers
 const server = app
-  .use((_, res) => res.sendFile(Path.resolve(WEB_DIR, 'index.html')))
+  .use((_, res) =>
+    res.sendFile('index.html', { root: Path.resolve(__dirname, '..', 'web') })
+  )
   .listen(port, () => console.log('server started at', port));
 
 const peers = new Peers(server);
